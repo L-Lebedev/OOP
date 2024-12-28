@@ -15,9 +15,9 @@ public class Lab extends Course{
     String[] materials;
     
     public Lab(String name, int numCredits, String typology, String type, int numStudents, int numProfs,
-            int WeeklyLectures, int WeeklyHours, String[] materials){
+            int WeeklyLectures, int WeeklyHours, String[] materials, Student[] studentsList){
         
-        super(name, numCredits, typology, type, numStudents, numProfs);
+        super(name, numCredits, typology, type, numStudents, numProfs,studentsList);
         this.WeeklyLectures = WeeklyLectures;
         this.WeeklyHours = WeeklyHours;
         this.materials = materials;

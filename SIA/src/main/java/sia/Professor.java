@@ -7,14 +7,14 @@ package sia;
 import java.util.Scanner;
 
 public class Professor extends Person{
-    private String[] assignedSubjects;
+    private Course[] assignedSubjects;
     private boolean[] workDays;
     private int dailyWorkload;
     private String aboutMe;
     private boolean obama; //I do not make myself responsible for this variable, the assignment says we need 5.
     
     //Assigned
-    public Professor(String name, String lastName, char gender, long id, int age, String[] assignedSubjects, boolean[] workDays, int dailyWorkload){
+    public Professor(String name, String lastName, char gender, long id, int age, Course[] assignedSubjects, boolean[] workDays, int dailyWorkload){
         super(name, lastName, gender, id, age);
         this.assignedSubjects = assignedSubjects;
         this.workDays = workDays;
@@ -28,7 +28,6 @@ public class Professor extends Person{
     //
     public Professor(){
         super();
-        this.assignedSubjects = new String[0];
         this.workDays = new boolean[0];
         this.dailyWorkload = -1;
         this.aboutMe = null;
@@ -39,17 +38,15 @@ public class Professor extends Person{
     public String getData(){
         return super.getData() + "\n" +
                 "Works on (trabaja): " + this.getWorkDaysString() + "\n" +
-                "Subjects (materias): " + this.getSubjectListString() + "\n" +
                 "Daily workload: " + this.dailyWorkload + " hours\n" +
                 "About me: " + this.aboutMe;
     }
     
-    public String getSubjectListString(){
-        String output = "";
-        for(String element : this.assignedSubjects){
-            output = output + element + " ";
+    public void getSubjectListString(){
+        for(int ii = 0; ii < this.assignedSubjects.length; ii++){
+            System.out.println(this.assignedSubjects[ii].getName());
         }
-        return output;
+        
     }
     
     public String getWorkDaysString() {
@@ -163,7 +160,7 @@ public class Professor extends Person{
     }
     
     //Getters
-    public String[] getAssignedSubjects(){
+    public Course[] getAssignedSubjects(){
         return this.assignedSubjects;
     }
     public boolean[] getWorkDays(){
@@ -180,7 +177,7 @@ public class Professor extends Person{
     }
     
     //Setters
-    public void setAssignedSubjects(String[] argument){
+    public void setAssignedSubjects(Course[] argument){
         this.assignedSubjects = argument;
     }
     public void setWorkDays(boolean[] argument){

@@ -14,12 +14,12 @@ public class Theoretical extends Course{
     String[] books;
     
     public Theoretical(String name, int numCredits, String typology, String type, int numStudents, int numProfs,
-            int WeeklyLectures, int WeeklyHours, String[] materials){
+            int WeeklyLectures, int WeeklyHours, String[] books, Student[] studentsList){
         
-        super(name, numCredits, typology, type, numStudents, numProfs);
+        super(name, numCredits, typology, type, numStudents, numProfs, studentsList);
         this.WeeklyLectures = WeeklyLectures;
         this.WeeklyHours = WeeklyHours;
-        this.books = materials;
+        this.books = books;
     }
     
     @Override 

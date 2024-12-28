@@ -17,16 +17,18 @@ public class Course {
     private String type;
     private int numStudents;
     private int numProfs;
+    private Student[] students;
     
     //Methods
     //Constructor 
-    public Course(String name, int numCredits, String typology, String type, int numStudents, int numProfs){
+    public Course(String name, int numCredits, String typology, String type, int numStudents, int numProfs, Student[] students){
         this.name = name;
         this.numCredits = numCredits;
         this.typology = typology;
         this.type = type;
         this.numStudents = numStudents;
         this.numProfs = numProfs;
+        this.students = students;
     }
     
     //getters
@@ -91,4 +93,27 @@ public class Course {
         System.out.println("You have lost this course with 6 absences");
     }
     
+    public void reportStudentsInfo(int ii){
+        System.out.println("The data from the " + ii + " students is: ");
+        System.out.println(this.students[ii].getName());
+    }
+    
+    public void reportStudentsInfo(int ii, boolean Flag){
+        if(Flag){
+        System.out.println("The data from the " + ii + " students is: ");
+        System.out.println("Name: " + this.students[ii].getName());
+        System.out.println("Last name: " + this.students[ii].getLastName());
+        System.out.println("Id: " + this.students[ii].getId());
+        System.out.println("Age: " + this.students[ii].getAge());
+
+        }
+    }
+    
+    public void reportCourseInfo(){
+        //String name, int numCredits, String typology, String type, int numStudents, int numProfs, Student[] students
+        System.out.println("Name: " + name);
+        System.out.println("Credits: " + numCredits);
+        System.out.println("Typology: " + typology);
+        System.out.println("Type: " + type);     
+    }
 }

@@ -10,10 +10,9 @@ package sia;
  */
 public class Student extends Person{
     public float finalGrade;
-    public char gender;
     
-    public Student(String name, String lastName, long id, int age, float finalGrade, char gender){
-        super(name, lastName, id, age);
+    public Student(String name, String lastName,long id, int age, float finalGrade, char gender){
+        super(name, lastName, gender, id, age);
         this.finalGrade = finalGrade;
         this.gender = gender;
     }
